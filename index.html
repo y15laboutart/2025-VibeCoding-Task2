@@ -378,11 +378,46 @@
     .about-layout {
       display: flex;
       flex-direction: column;
-      gap: 1.5rem;
+      gap: 1.75rem;
     }
 
     .about-content {
       font-size: 0.95rem;
+    }
+
+    .about-highlights {
+      list-style: disc;
+      padding-left: 1.2rem;
+      margin: 0.75rem 0 0;
+      color: #e5e7eb;
+      font-size: 0.9rem;
+    }
+
+    .about-highlight-item {
+      margin-bottom: 0.35rem;
+    }
+
+    .about-highlight-item:last-child {
+      margin-bottom: 0;
+    }
+
+    .about-visual {
+      max-width: 26rem;
+      margin: 0 auto;
+    }
+
+    .about-image-wrapper {
+      padding: 0.75rem;
+      border-radius: 1rem;
+      background: radial-gradient(circle at top left, rgba(30, 64, 175, 0.45), rgba(15, 23, 42, 0.95));
+      border: 1px solid rgba(148, 163, 184, 0.5);
+      box-shadow: 0 16px 32px rgba(15, 23, 42, 0.9);
+    }
+
+    .about-image-caption {
+      margin-top: 0.5rem;
+      font-size: 0.78rem;
+      color: #9ca3af;
     }
 
     .about-note {
@@ -528,10 +563,16 @@
       .about-layout {
         flex-direction: row;
         gap: 2rem;
+        align-items: center;
       }
 
       .about-content {
         flex: 3;
+      }
+
+      .about-visual {
+        flex: 2;
+        margin: 0;
       }
 
       .skills-grid {
@@ -640,21 +681,40 @@
 
       <!-- SECTION:ABOUT-START -->
       <section id="about" class="section section-about" aria-labelledby="about-heading">
-        <div class="section-inner">
-          <h2 id="about-heading" class="section-title">關於我（占位版，之後會用 Section SDD 替換）</h2>
-          <p>
-            這裡是「關於我」區塊的占位內容。正式版通常會放入你的背景簡介、學習與工作經歷、目前專注的技術領域，以及你對前端開發或產品的看法。
-          </p>
-          <p>
-            之後可以使用一個專門針對 About 區的 Section SDD Prompt，產生更完整的文字段落與排版結構（例如分成「個人簡介」、「經歷時間軸」、「價值觀」三個小段落），再將那個 Prompt 產出的
-            <span class="highlight">整個 &lt;section&gt; ... &lt;/section&gt;</span> 程式碼覆蓋掉目前這一區。
-          </p>
-          <p class="muted-text">
-            你也可以在之後的版本中選擇加入第二張照片、時間軸列表或是幾個關鍵數字（年資、完成專案數量等），這裡先保留簡單文字占位，避免分散注意力。
-          </p>
-          <div class="section-note about-note">
-            提醒開發者：之後會用 Section SDD 的 Prompt 產生新的 section，請把新的 section 程式碼整段貼在
-            <span class="highlight">「SECTION:ABOUT-START」與「SECTION:ABOUT-END」</span> 這兩個註解中間，完全取代現在這一區。
+        <div class="section-inner about-layout">
+          <div class="about-content">
+            <h2 id="about-heading" class="section-title">關於我</h2>
+            <p>
+              我目前主要專注在前端開發、教學與接案合作，日常工作內容包含切版、RWD 介面實作、元件化結構設計，以及協助把設計稿穩定落地到瀏覽器中。平常會大量使用 HTML 與 CSS，也會依專案需要搭配現代前端工具與工作流程。
+            </p>
+            <p>
+              在合作與教學上，我特別重視「把事情講清楚」：習慣先釐清需求、拆解問題，再用對方聽得懂的方式說明技術細節。比起炫技，我更在意的是溝通順暢、可維護性與長期穩定，讓設計、產品與工程彼此都有安全感。
+            </p>
+            <ul class="about-highlights">
+              <li class="about-highlight-item">可以協助檢視既有版面結構，提出 HTML / CSS 的重構與優化建議。</li>
+              <li class="about-highlight-item">擅長把複雜的需求拆成明確的開發步驟，做成好溝通、好追蹤的任務清單。</li>
+              <li class="about-highlight-item">喜歡教學與陪跑，適合協助初學者或轉職者建立穩固的前端基礎概念。</li>
+            </ul>
+            <div class="button-row">
+              <a href="#projects" class="button button-primary">查看作品集</a>
+              <a href="#contact" class="button button-secondary">聯絡我</a>
+            </div>
+            <div class="section-note about-note">
+              提醒開發者：之後會用 Section SDD 的 Prompt 產生新的 section，請把新的 section 程式碼整段貼在
+              <span class="highlight">「SECTION:ABOUT-START」與「SECTION:ABOUT-END」</span> 這兩個註解中間，完全取代現在這一區。
+            </div>
+          </div>
+          <div class="about-visual">
+            <div class="about-image-wrapper">
+              <img
+                src="https://source.unsplash.com/800x600/?programmer,coding"
+                alt="專注撰寫程式碼的工程師在螢幕前工作的示意照片"
+                loading="lazy"
+              >
+            </div>
+            <p class="about-image-caption">
+              示意照片：代表日常在螢幕前開發、思考版面與程式結構的狀態。未來可以在 Section SDD 中改成固定圖片網址或換成個人照片。
+            </p>
           </div>
         </div>
       </section>
